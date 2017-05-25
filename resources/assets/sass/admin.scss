@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700&subset=latin-ext');
+@import "variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$green: #7EB62E;
+$red: #F64B2F;
+$blue: #1f648b;
+
+html, body{
+  height: 100%;
+}
+.admin-app{
+  height: 100%;
+}
+.navbar{
+  margin-bottom: 0 !important;
+}
+
+.admin-menu{
+  width: 300px;
+  height: 100%;
+  display: inline-block;
+  background-color: $blue;
+  border-right: 1.3px solid #2e3436;
+  color: #fff;
+  float: left;
+}
+.admin-content{
+  display: block;
+  margin-left: 300px;
+}
+.admin-menu ul{
+  list-style-type: none;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+.admin-menu ul li{
+  display: block;
+}
+.admin-menu ul li a{
+  display: block;
+  padding: 15px 0 15px 20px;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+.admin-content{
+  padding: 70px 60px;
+}
+
+/* Playgrounds */
+.table-playgrounds{
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-reservations{
+  border-collapse: collapse;
+  width: 100%;
+}
+.table-playgrounds th{
+  padding: 14px;
+  text-transform: uppercase;
+}
+.table-reservations th{
+  padding: 14px;
+  text-transform: uppercase;
+}
+.table-playgrounds td{
+  padding: 8px 20px;
+}
+.table-reservations td{
+  padding: 8px 20px;
+}
+.table-playgrounds th, td{
+  border: 1px solid #636B6F;
+}
+.table-reservations th, td{
+  border: 1px solid #636B6F;
+}
+.crud-playgrounds{
+
+}
+.crud-playgrounds a{
+  display: inline-block;
+  text-decoration: none;
+  width: 100px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 2px;
+  text-align: center;
+  padding: 10px 0;
+  margin: 40px 40px;
+}
+.crud-playgrounds a.add{
+  background-color: $green;
+}
+.crud-playgrounds a.delete{
+  background-color: $red;
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+input, textarea{
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  margin: 0 0 40px;
+  padding: 10px;
+}
+input{
+  min-height: 40px;
+}
+input[type="submit"]{
+  transition: all .3s ease;
+  font-weight: 600;
+}
+input[type="submit"]:hover{
+  background-color: $blue;
+  color: #fff;
+}
+textarea{
+  resize: none;
+  min-height: 130px;
+}
+select{
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  min-height: 40px;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  margin-bottom: 40px;
+}

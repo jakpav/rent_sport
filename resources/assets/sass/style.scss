@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700&subset=latin-ext');
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$black: #000;
+$red: #E53012;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html, body{
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+/* Header */
+header{
+  padding: 50px 0;
+}
+header nav{
+  margin-top: 12px;
+}
+nav ul.menu{
+  list-style-type: none;
+  font-size: 0;
+}
+nav ul.menu li{
+  display: inline-block;
+  padding: 0 10px;
+}
+nav ul.menu li a{
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #e3e3e3;
+  transition: all .3s ease;
+  text-decoration: none;
+  color: $black;
+}
+nav ul.menu li a:hover{
+  border-bottom: 2px solid $red;
+  text-decoration: none;
+}
+
+/* Footer */
+footer{
+  padding: 50px 0;
+  color: $black;
+  text-align: center;
+  border-top: 1.3px solid #e1e1e1;
+}
+
+/* All */
+.hdr{
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 26px;
+  color: $red;
+  letter-spacing: 1.5px;
+}
+.hdr span{
+  color: $black;
+  border-bottom: 2px solid $red;
+  padding-bottom: 3px;
+}
+
+/* Mainpage */
+.poster{
+  padding-bottom: 43px;
+  border-bottom: 1.3px solid #e1e1e1;
+}
+.mainpage-about-us h2.hdr{
+  padding: 0 0 0 20%;
+  margin-top: 50px;
+}
+.mainpage-about-us p, .mainpage-our-services p{
+  font-size: 14px;
+  margin: 30px 0;
+  text-align: justify;
+}
+p.left-p{
+  padding: 0 5% 0 20%;
+}
+p.right-p{
+  padding: 0 20% 0 5%;
+}
+.right-grey-border{
+  border-right: 1px solid #e1e1e1;
+}
+.right-white-border{
+  border-right: 1px solid #fff;
+}
+.mainpage-about-us{
+  padding-bottom: 43px;
+  border-bottom: 1.3px solid #e1e1e1;
+}
+.mainpage-our-services{
+  padding-bottom: 43px;
+}
+.mainpage-our-services h2.hdr{
+  padding: 0 0 0 20%;
+  margin-top: 50px;
+}
+
+
+/* About us */
+.about-us{
+  padding: 40px;
+}
+.about-us p{
+  text-align: justify;
+  padding: 40px 0 0;
+}
+
+/* Playgrounds */
+.playground_1{
+  padding: 50px 7%;
+  margin-bottom: 30px;
+}
+.playground_1 h2{
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+.playground_1 p{
+  text-align: justify;
+}
+.playground_1 .playground_price{
+  color: $red;
+  font-weight: 600;
+  font-size: 18px;
+}
+.playground_2{
+  padding: 50px 7%;
+  background-color: $red;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+.playground_2 h2{
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+.playground_2 p{
+  text-align: justify;
+}
+.playground_2 .playground_price{
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Reservation */
+input, select{
+  min-height: 40px;
+  border-radius: 2px;
+  margin: 20px 0;
+}
+input:focus, select:focus, textarea:focus{
+  border: 1px solid $red;
+  outline: none;
+}
+select{
+  display: block;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #e1e1e1;
+}
+.my_datepicker{
+  display: block;
+  width: 80%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+}
+.reservation-name, .reservation-email, .reservation-hours, textarea{
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.reservation-submit{
+  background-color: $red;
+  color: #fff;
+  border-radius: 2px;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  border: 1px solid $red;
+  transition: all .3s ease;
+  font-weight: 600;
+}
+.reservation-submit:hover{
+  background-color: #fff;
+  color: $red;
+}
+.ui-datepicker{
+  background-color: #e1e1e1;
+  border-radius: 3px;
+}
+.ui-datepicker span{
+  padding: 8px;
+}
+.ui-datepicker a{
+  color: $red;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ui-datepicker-header{
+  padding-top: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $red;
+}
+.ui-state-default{
+  padding: 8px;
+}
+.reservation-form{
+  margin-bottom: 50px;
+}
+input[type=date]{
+
+  &::-webkit-inner-spin-button{
+    height: 0;
+  }
+  &::-webkit-calendar-picker-indicator{
+    background-color: transparent;
+    color: $red;
+    font-size: 1.5em;
+  }
+}
+input[type="number"].contact_mobile{
+  &::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+  }
+}
+textarea{
+  resize: none;
+  min-height: 150px;
+  padding: 10px;
+  margin: 20px 0;
+}
