@@ -15,3 +15,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 mix.sass('resources/assets/sass/style.scss', 'public/css');
 mix.sass('resources/assets/sass/admin.scss', 'public/css');
+mix.browserSync('http://localhost/jPavlo/rent_sport');

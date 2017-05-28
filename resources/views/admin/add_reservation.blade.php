@@ -5,11 +5,17 @@
         <form method="post" id="addR">
             {{csrf_field()}}
             <h2 class="hdr">Add new reservation</h2>
+            @if(isset($collision_message))
+                <div class="collision_message">{{$collision_message}}</div>
+            @endif
+            @if(isset($time_message))
+                <div class="collision_message">{{$time_message}}</div>
+            @endif
             <input type="text" @if(isset($name))value="{{$name}}" @endif name="name" placeholder="Customer's Name">
             <input type="email" @if(isset($email))value="{{$email}}" @endif name="email" placeholder="Customer's E-mail">
-            <input type="date" @if(isset($start_date))value="{{$start_date}}" @endif name="start_date" placeholder="Date of start">
-            <input type="date" @if(isset($end_date))value="{{$end_date}}" @endif name="end_date" placeholder="Date of end">
-            <input type="number" min="0" name="hours" @if(isset($hours)){{$hours}} @endif placeholder="Hours of your stay">
+            <input type="date" @if(isset($date))value="{{$date}}" @endif name="date" placeholder="Date">
+            <input type="time" name="time_begin" @if(isset($time_begin))value="{{$time_begin}}" @endif placeholder="Time of beginnig">
+            <input type="time" name="time_end" @if(isset($time_end))value="{{$time_end}}" @endif placeholder="Time of finishing">
             <select name="playgrounds_id">
                 @if(isset($playgrounds))
                 @foreach($playgrounds as $p)

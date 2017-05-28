@@ -7,7 +7,7 @@
             <h2 class="hdr">Delete reservation</h2>
             <select name="reservation">
                 @foreach($reservations as $r)
-                    <option value="{{$r->id}}">{{$r->name}}: {{$r->start_date}} - {{$r->end_date}}, {{$r->hours}} hours </option>
+                    <option value="{{$r->id}}">{{$r->name}}: {{$r->date}}, start: {{$r->time_begin}} - end: {{$r->time_end}}</option>
                 @endforeach
             </select>
             <input type="submit" name="submit" value="Submit">

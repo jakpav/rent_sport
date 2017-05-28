@@ -5,18 +5,24 @@
 $green: #7EB62E;
 $red: #F64B2F;
 $blue: #1f648b;
+$error: #F64B2F;
+$success: #7EB62E;
 
 html, body{
   height: 100%;
 }
 .admin-app{
-  height: 100%;
+  position: absolute;
+  min-height: 100%;
+  height: auto;
+  width: 100%;
 }
 .navbar{
   margin-bottom: 0 !important;
 }
 
 .admin-menu{
+  position: absolute;
   width: 300px;
   height: 100%;
   display: inline-block;
@@ -26,6 +32,7 @@ html, body{
   float: left;
 }
 .admin-content{
+  min-height: 100%;
   display: block;
   margin-left: 300px;
 }
@@ -105,6 +112,13 @@ h2{
   margin-bottom: 40px;
   font-weight: 600;
 }
+h2.index{
+  text-align: left;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: $blue;
+  font-size: 20px;
+}
 input, textarea{
   display: block;
   position: relative;
@@ -141,4 +155,31 @@ select{
   border: 1px solid #e1e1e1;
   border-radius: 2px;
   margin-bottom: 40px;
+}
+ul.pagination{
+  position: relative;
+  display: block;
+  li:nth-child(2) {
+    position: absolute;
+    right: 0;
+  }
+}
+.collision_message{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $error;
+  color: #fff;
+  letter-spacing: 0.5px;
+  width: 50%;
+  border-radius: 2px;
+  padding: 5px 10px;
+  line-height: 40px;
+  margin: 0 0 40px;
+}
+h1{
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: $blue;
 }

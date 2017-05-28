@@ -33,11 +33,11 @@ class WebsiteController extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
         $playground = $request->input('playground');
-        $date_start = $request->input('date_start');
-        $date_end = $request->input('date_end');
-        $hours = $request->input('hours');
+        $date = $request->input('date');
+        $time_begin = $request->input('time_begin');
+        $time_end = $request->input('time_end');
 
-        $input = compact('name', 'email', 'playground', 'date_start', 'date_end', 'hours');
+        $input = compact('name', 'email', 'playground', 'date', 'time_begin', 'time_end');
         $validation = true;
         foreach ($input as $item){
             if(!isset($item)){
@@ -48,29 +48,41 @@ class WebsiteController extends Controller
         $ps = Playground::all();
 
         if($validation){
-            $reservation = new Reservation();
-            $reservation->name = $name;
-            $reservation->email = $email;
-            $reservation->start_date = $date_start;
-            $reservation->end_date = $date_end;
-            $reservation->hours = $hours;
-            $reservation->playgrounds_id = $playground;
 
-            if($reservation->save()){
-                return view('website.reservation', compact('ps'));
+            $collision = Reservation::where('playgrounds_id', '=', $playground)
+                ->where('date', '=', $date)->where('time_begin', '<', $time_end)
+                ->where('time_end', '>', $time_begin)->count();
+
+
+            if($time_end>$time_begin){
+                if($collision < 1){
+                    $reservation = new Reservation();
+
+                    $reservation->name = $name;
+                    $reservation->email = $email;
+                    $reservation->date = $date;
+                    $reservation->time_begin = $time_begin;
+                    $reservation->time_end = $time_end;
+                    $reservation->playgrounds_id = $playground;
+
+                    if($reservation->save()){
+                        $success = 'Vaša rezervácia prebehla úspešne.';
+                        return view('website.reservation', compact('ps', 'success'));
+                    }else{
+                        return abort(500);
+                    }
+                }else{
+                    $collision_message = 'Nemôžete si rezervovať ihrisko, z dôvodu inej rezervácie v tomto čase.';
+                    return view('website.reservation', compact('ps', 'collision_message', 'name', 'email', 'playground', 'date', 'time_begin', 'time_end'));
+                }
             }else{
-                return abort(500);
+                $time_message = 'Zadali ste nesprávny čas!';
+                return view('website.reservation', compact('ps', 'time_message', 'name', 'email', 'playground', 'date', 'time_begin', 'time_end'));
             }
+
         }else{
-            return view('website.reservation', compact('ps', 'name', 'email', 'playground', 'date_start', 'date_end', 'hours'));
+            return view('website.reservation', compact('ps', 'name', 'email', 'playground', 'date', 'time_begin', 'time_end'));
         }
-
-        /*if(!$reservation->save()){
-            return view('website.reservation', compact('ps', 'name', 'email', 'playground', 'date_start', 'date_end', 'hours'));
-        }else{
-            return view('website.reservation', compact('ps'));
-        }*/
-
     }
     public function contact(Request $request){
 

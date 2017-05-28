@@ -81,7 +81,9 @@
             <li>
                 <a href="{{url('/admin/customers')}}">Customers</a>
             </li>
-      
+            <li>
+                <a href="{{url('/admin/discounts')}}">Discounts</a>
+            </li>
         </ul>
     </div>
     @yield('content')

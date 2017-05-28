@@ -16,6 +16,9 @@
             @endforeach
         @endif
         </table>
+
+        {{$playgrounds->links()}}
+
         <div class="crud-playgrounds text-center">
             <a class="add" href="{{url('/admin/playgrounds/add')}}">Add</a>
             <a class="delete" href="{{url('/admin/playgrounds/delete')}}">Delete</a>

@@ -8,6 +8,21 @@
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <h2 class="hdr">Rezervácia</h2>
+                    @if(isset($collision_message))
+
+                        <div class="collision_message">{{$collision_message}}</div>
+
+                    @endif
+                    @if(isset($success))
+
+                        <div class="success">{{$success}}</div>
+
+                    @endif
+                    @if(isset($time_message))
+
+                        <div class="collision_message">{{$time_message}}{{$time_message}}</div>
+
+                    @endif
                 </div>
             </div>
             <div class="row">
@@ -30,16 +45,18 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <input required type="date" placeholder="Date of start" class="my_datepicker text-center" name="date_start" id="my_datepicker">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <input required type="date" placeholder="Date of end" class="my_datepicker text-center" name="date_end" id="my_datepicker2">
+                <div class="col-xs-12">
+                    <input required type="date" @if(isset($date))value="{{$date}}" @endif name="date" placeholder="Date" class="my_datepicker text-center">
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <input required type="text" @if(isset($hours))value="{{$hours}}" @endif name="hours" placeholder="Hours of your visit" class="reservation-hours text-center">
+                    <input required type="time" @if(isset($time_begin))value="{{$time_begin}}" @endif name="time_begin" placeholder="Time of beginning" class="my_time_picker text-center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input required type="time" @if(isset($time_end))value="{{$time_end}}" @endif name="time_end" placeholder="Time of finishing" class="my_time_picker text-center">
                 </div>
             </div>
             <div class="row">
